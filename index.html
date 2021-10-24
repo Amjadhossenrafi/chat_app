@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime chatroom</title>
+    <link href="https://css.gg/arrow-right.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- container & title -->
+      <div class="header"><h1>Chatroom</h1></div>
+      <!-- buttons for chatroom -->
+      <div class="channel-selector-container">
+        <div class="chatroom">Choose a chatroom</div>
+        <button class="btn" id="genaral">#general</button>
+        <button class="btn" id="gaming">#gaming</button>
+        <button class="btn" id="music">#music</button>
+        <button class="btn" id="notes">#notes</button>
+        <button class="btn" id="discussion">#discussion</button>
+      </div>
+
+      <!-- chatlist or the chat window -->
+      <div class="chat-window">
+        <ul class="chat-list"></ul>
+      </div>
+
+      <!-- user input form -->
+      <form action="" class="text-input-form" autocomplete="off">
+        <input
+          type="text"
+          placeholder="Text Message"
+          class="text-input"
+          name="text"
+        />
+        <input type="submit" class="send-input" value="send" />
+      </form>
+      <div class="change-name-button btn">change name</div>
+      <!-- change-username -->
+      <div class="change-username-container">
+        <form action="" class="change-username-form" autocomplete="off">
+          <div class="cross">x</div>
+          <input type="text" class="change-username-input" name="username" />
+          <input type="submit" value="Add" class="btn change-username-btn" />
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+
+  <script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: 'AIzaSyBLpFETn1zbHpgti0aMfQintsu8Djbf4gA',
+      authDomain: 'basic-chat-application-23e1b.firebaseapp.com',
+      projectId: 'basic-chat-application-23e1b',
+      storageBucket: 'basic-chat-application-23e1b.appspot.com',
+      messagingSenderId: '641434531713',
+      appId: '1:641434531713:web:afaf107fff2b6219185a80',
+      measurementId: 'G-HWFRVVM802',
+    }
+    firebase.initializeApp(firebaseConfig)
+    const db = firebase.firestore()
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script>
+  <script src="scripts/chat.js"></script>
+  <script src="scripts/ui.js"></script>
+  <script src="scripts/app.js"></script>
+</html>
